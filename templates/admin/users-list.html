@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Заказ #
+{% endblock %}
+
+{% block content %}
+<!-- BEGIN content -->
+<div class="out">
+    <div class="container">
+        {% include '/admin/base/header.html' %}
+        <div class="row d-flex justify-content-between underline">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="/admin/users/list/">Пользователи</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/orders/list/">Заказы</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">   
+            <div class="table-title">
+                Список пользователей
+            </div>
+        </div>
+        <div class="row">
+            <table class="table" id="usersTable">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>TG user_id</th>
+                        <th>username</th>
+                        <th>Баланс</th>
+                        <th>Кол-во рефералов</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for tguser in tguser_list %}
+                        <tr>
+                            <th scope="row"><a href="/admin/users/detail/{{ tguser.id }}/">{{ tguser.id }}</a></th>
+                            <td>{{ tguser.user_id }}</td>
+                            <td>{{ tguser.username }}</td>
+                            <td>{{ tguser.balance }}</td>
+                            <td>{{ tguser.get_referrals_count() }}</td>
+                            <td><a href="/admin/users/detail/{{ tguser.id }}/delete/">удалить</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- END content -->
+{% endblock %}

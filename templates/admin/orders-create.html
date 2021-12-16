@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Заказ #
+{% endblock %}
+
+{% block content %}
+<!-- BEGIN content -->
+<div class="out">
+    <div class="container">
+        {% include '/admin/base/header.html' %}
+        <div class="row d-flex justify-content-between underline">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/users/list/">Пользователи</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/orders/list/">Заказы</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="table-title">
+                Создание заказа
+            </div>
+        </div>
+        <div class="row">
+            <form method="POST">
+                <div class="form-group row">
+                    <label for="formGroupExampleInput">User ID</label>
+                    <input type="text" required name="user_id" class="form-control" id="formGroupExampleInput" placeholder="Введтие user_id пользователя" value="{{ values.user_id }}">
+                    {% if errors.user_id %}
+                        <p class="text-danger">{{ errors.user_id }}</p>
+                    {% endif %}
+                </div>
+                <div class="form-group row">
+                    <label for="formGroupExampleInput2">Сумма</label>
+                    <input type="number" required name="amount" class="form-control" id="formGroupExampleInput2" placeholder="Введите сумму" value="{{ values.amount }}">
+                </div>
+                <div class="form-group form-check row">
+                    <input class="form-check-input" type="checkbox" name="paid" id="defaultCheck1" value="" {% if values.paid == '' %} checked {% endif %}>
+                    <label class="form-check-label" for="defaultCheck1">
+                        Оплачено
+                    </label>
+                </div>
+                <div class="form-group row">
+                    <input type="submit" class="btn btn-primary mb-2" value="Создать заказ">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- END content -->
+{% endblock %}

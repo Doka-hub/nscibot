@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Заказ #
+{% endblock %}
+
+{% block content %}
+<!-- BEGIN content -->
+<div class="out">
+    <div class="container">
+        {% include '/admin/base/header.html' %}
+        <div class="row d-flex justify-content-between underline">
+            <ul class="nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="/admin/users/list/">Пользователи</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/admin/orders/list/">Заказы</a>
+                </li>
+              </ul>
+        </div>
+    </div>
+</div>
+<!-- END content -->
+{% endblock %}

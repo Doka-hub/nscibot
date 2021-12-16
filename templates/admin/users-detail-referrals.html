@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Рефералы пользователя {{ tguser }}
+{% endblock %}
+
+{% block content %}
+<!-- BEGIN content -->
+<div class="out">
+    <div class="container">
+        {% include '/admin/base/header.html' %}
+        <div class="row d-flex justify-content-between underline">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/users/list/">Пользователи</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/orders/list/">Заказы</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="table-title">
+                Рефералы пользователя {{ tguser }}
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center" id="userDetail">
+            {% if tguser %}
+                <table class="table" id="usersTable">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>user_id</th>
+                            <th>Username</th>
+                            <th>Баланс</th>
+                            <th>Кол-во рефералов <span><a href='/admin/users/detail/{{ tguser.id }}/referrals/'></a></span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {% for referral in referrals %}
+                                <th scope="row"><a href="#">{{ referral.id }}</a></th>
+                                <td>{{ referral.user_id }}</td>
+                                <td>{{ referral.username }}</td>
+                                <td>{{ referral.balance }}</td>
+                                <td>{{ referral.get_referrals_count() }}</td>
+                            {% endfor %}
+                        </tr>
+                    </tbody>
+                </table>
+            {% else %}
+                <div class="alert alert-danger" role="alert">
+                    <strong>Ошибка!</strong> Пользователь не найден.
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<!-- END content -->
+{% endblock %}

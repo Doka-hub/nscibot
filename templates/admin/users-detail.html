@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Пользователь {{ tguser }}
+{% endblock %}
+
+{% block content %}
+<!-- BEGIN content -->
+<div class="out">
+    <div class="container">
+        {% include '/admin/base/header.html' %}
+        <div class="row d-flex justify-content-between underline">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/users/list/">Пользователи</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/orders/list/">Заказы</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="table-title">
+                Пользователь {{ tguser }}
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center" id="userDetail">
+            {% if tguser %}
+                <table class="table" id="usersTable">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>user_id</th>
+                            <th>Username</th>
+                            <th>Баланс</th>
+                            <th>Кол-во рефералов <span><a href='/admin/users/detail/{{ tguser.id }}/referrals/'>посмотреть</a></span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><a href="#">{{ tguser.id }}</a></th>
+                            <td>{{ tguser.user_id }}</td>
+                            <td>{{ tguser.username }}</td>
+                            <td>{{ tguser.balance }}</td>
+                            <td>{{ tguser.get_referrals_count() }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            {% else %}
+                <div class="alert alert-danger" role="alert">
+                    <strong>Ошибка!</strong> Пользователь не найден.
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<!-- END content -->
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Заказ # {% if order %} {{ order.id }} {% endif %}
+{% endblock %}
+
+{% block content %}
+<!-- BEGIN content -->
+<div class="out">
+    <div class="container">
+        {% include '/admin/base/header.html' %}
+        <div class="row d-flex justify-content-between underline">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/users/list/">Пользователи</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/orders/list/">Заказы</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="table-title">
+                Заказ {{ order }}
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center" id="userDetail">
+            {% if order %}
+                <table class="table" id="usersTable">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Пользователь</th>
+                            <th>Сумма</th>
+                            <th>Оплачено</th>
+                            <th>Дата создания</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><a href="#">{{ order.id }}</a></th>
+                            <td><a target="_blank" href="/admin/users/detail/{{ order.tguser.id }}/">{{ order.tguser }}</a></td>
+                            <td>{{ order.amount }}</td>
+                            <td>{{ order.paid }}</td>
+                            <td>{{ order.created }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            {% else %}
+                <div class="alert alert-danger" role="alert">
+                    <strong>Ошибка!</strong> Заказ не найден.
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<!-- END content -->
+{% endblock %}
