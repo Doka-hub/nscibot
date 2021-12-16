@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Курс
+{% endblock %}
+
+{% block content %}
+<!-- BEGIN content -->
+<div class="out">
+    <div class="container">
+        {% include '/admin/base/header.html' %}
+        <div class="row d-flex justify-content-between underline">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/users/list/">Пользователи</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/orders/list/">Заказы</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="/admin/exchange-rate/">Курс</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="table-title">
+                Курс
+            </div>
+        </div>
+        <div class="row">
+            <form method="POST">
+                <div class="form-group row">
+                    <label for="formGroupExampleInput2">Цена</label>
+                    <input type="number" required name="cost" class="form-control" id="formGroupExampleInput2" placeholder="Введите сумму" value="{{ exchange_rate.cost }}">
+                    {% if errors.cost %}
+                        <p class="text-danger">{{ errors.cost }}</p>
+                    {% endif %}
+                </div>
+                <div class="form-group row">
+                    <input type="submit" class="btn btn-primary mb-2" value="Изменить курс">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- END content -->
+{% endblock %}
