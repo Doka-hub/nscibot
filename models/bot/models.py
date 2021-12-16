@@ -88,6 +88,7 @@ class ReferralCabinet(BaseModel):
     referral_link = peewee.CharField(verbose_name='Реферальная сссылка')
     referrals = peewee.ManyToManyField(TGUser, backref='referrals')
 
+
 referral_cabinet_tgusers_through = TGUser.referrals.get_through_model()
 
 
@@ -101,6 +102,7 @@ class Order(BaseModel):
 
     def __str__(self):
         return self.tguser.username or self.tguser.id
+
 
 class ExchangeRate(BaseModel):
     cost = peewee.DecimalField(verbose_name='Цена')

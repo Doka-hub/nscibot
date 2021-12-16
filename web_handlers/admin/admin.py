@@ -8,10 +8,7 @@ from datetime import datetime
 from decimal import Decimal
 
 # local imports
-from models.bot import objects, TGUser, Order
-from loader import bot
-
-from data import config
+from models.bot import objects, TGUser, Order, ExchangeRate
 
 
 admin_app = web.Application()
@@ -112,6 +109,32 @@ async def orders_create(request: web.Request) -> dict:
     return response
 
 
+@aiohttp_jinja2.template('admin/exchange-rate.html')
+async def exchange_rate_detail(request: web.Request) -> dict:
+    response = {'errors': {}, 'values': {}}
+
+    exchange_rate = (await objects.execute(ExchangeRate.select()))[0]
+
+    response['exchange_rate'] = exchange_rate
+    return response
+
+
+@aiohttp_jinja2.template('admin/exchange-rate.html')
+async def exchange_rate_edit(request: web.Request) -> dict:
+    response = {'errors': {}, 'values': {}}
+
+    exchange_rate_data = await request.post()
+    amount = exchange_rate_data.get('cost')
+
+    exchange_rate = (await objects.execute(ExchangeRate.select()))[0]
+
+    exchange_rate.cost = amount
+    await objects.update(exchange_rate, ['cost'])
+
+    response['exchange_rate'] = exchange_rate
+    return response
+
+
 @aiohttp_jinja2.template('admin/orders-create.html')
 async def post_orders_create(request: web.Request) -> dict:
     response = {'errors': {}, 'values': {}}
@@ -129,8 +152,6 @@ async def post_orders_create(request: web.Request) -> dict:
             'paid': paid
         }
     )
-
-    print(order_data)
 
     if user_id:
         try:
@@ -183,5 +204,9 @@ admin_app.add_routes(
         web.post('/orders/create/', post_orders_create),
 
         web.get('/orders/detail/{order_id}/', orders_detail),
+
+        # exchange rate
+        web.get('/exchange-rate/', exchange_rate_detail),
+        web.post('/exchange-rate/', exchange_rate_edit),
     ]
 )

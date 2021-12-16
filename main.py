@@ -29,7 +29,7 @@ async def on_startup(app: web.Application):
 
     logger.info('Configure BOT Webhook URL to: {url}', url=config.WEBHOOK_URL)
     
-    await bot_dp.start_polling()
+    # await bot_dp.start_polling()
     # await bot_dp.bot.set_webhook(config.WEBHOOK_URL)
     # await sleep(2)
 
