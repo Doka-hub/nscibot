@@ -5,7 +5,7 @@ from models.bot import objects, TGUser, ReferralCabinet, ExchangeRate, DoesNotEx
 
 
 async def get_or_create_user(user_id: int, username: Optional[str] = None) -> List[Union[TGUser, bool]]:
-    user, created = await objects.get_or_create(TGUser, user_id=user_id)
+    user, created = await objects.get_or_create(TGUser, user_id=int(user_id))
 
     if created:
         await objects.get_or_create(ReferralCabinet, tguser=user, referral_link=str(user.user_id))

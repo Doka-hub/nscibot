@@ -81,7 +81,7 @@ async def referral(callback: types.CallbackQuery):
 Реферальная программа бессрочна, не имеет лимита приглашений и начинает действовать моментально.
 Для достижения высоких результатов, внимательно подходите к поиску целевой аудитории: привлекайте только тех, кто будет покупать или продавать криптовалюту.
 Используйте уникальную реферальную ссылку для приглашения пользователей. Чеки и ссылки на ваши объявления также являются реферальными.
-t.me/test11312bot?start={user.referral_cabinet.get().referral_link}
+t.me/NSCI_Venture_Bot?start={user.referral_cabinet.get().referral_link}
         '''), reply_markup=referral_inline_keyboard
     )
 

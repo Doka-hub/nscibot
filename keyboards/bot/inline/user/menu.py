@@ -30,8 +30,8 @@ def get_balance_inline_keyboard(locale: Optional[str] = None, user_id: Optional[
     balance_inline_keyboard = get_inline_keyboard(
         [
             [
-                InlineKeyboardButton(_('Купить', locale=locale), url='t.me/{MODERATOR_USERNAME}'),
-                InlineKeyboardButton(_('Продать', locale=locale), url='t.me/{MODERATOR_USERNAME}')
+                InlineKeyboardButton(_('Купить', locale=locale), url=f't.me/{MODERATOR_USERNAME}'),
+                InlineKeyboardButton(_('Продать', locale=locale), url=f't.me/{MODERATOR_USERNAME}')
             ],
             [InlineKeyboardButton(_('Вывести на кошелек', locale=locale), callback_data='withdraw')],
         ], True, 'menu'
@@ -52,7 +52,7 @@ def get_more_inline_keyboard(locale: Optional[str] = None, user_id: Optional[int
     more_inline_keyboard = get_inline_keyboard(
         [
             [
-                InlineKeyboardButton(_('Поддержка', locale=locale), url='t.me/{HELPER_USERNAME}'),
+                InlineKeyboardButton(_('Поддержка', locale=locale), url=f't.me/{HELPER_USERNAME}'),
                 InlineKeyboardButton(_('Сайт', locale=locale), url='https://nsci.space/')
             ],
             [InlineKeyboardButton(_('Курс', locale=locale), callback_data='get_exchange_rate')],

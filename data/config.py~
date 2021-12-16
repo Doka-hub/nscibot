@@ -17,8 +17,8 @@ BASE_URL = config('BASE_URL')  # webhook domain
 ADMINS = [
     539655707,  # Дока
 ]
-MODERATOR_USERNAME = 'NSCI_support'
-HELPER_USERNAME = 'NSCI_support'
+MODERATOR_USERNAME = '@NSCI_Venture_Bot'
+HELPER_USERNAME = '@NSCI_Venture_Bot'
 
 # WEBHOOK settings
 WEBHOOK_PATH = f'/tg/webhooks/bot/'
