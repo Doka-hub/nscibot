@@ -47,7 +47,7 @@ async def balance(callback: types.CallbackQuery):
     balance_inline_keyboard = get_balance_inline_keyboard(user_id=user_id)
     await callback.message.answer(_(
         f'''Баланс: {user.balance} NSCI
-Примерно: {user.balance * 10} RUB
+Примерно: {user.balance * 10} USD
 🤝 Приглашено: {user.referral_cabinet.get().referrals.count()} пользователей
 💰 Заработано: {user.earned} NSCI
         '''

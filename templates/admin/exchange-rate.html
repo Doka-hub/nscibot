@@ -31,7 +31,7 @@
             <form method="POST">
                 <div class="form-group row">
                     <label for="formGroupExampleInput2">Цена</label>
-                    <input type="number" required name="cost" class="form-control" id="formGroupExampleInput2" placeholder="Введите сумму" value="{{ exchange_rate.cost }}">
+                    <input type="number" required name="cost" class="form-control" id="formGroupExampleInput2" placeholder="Введите сумму" value="{{ exchange_rate.cost }}" step="any">
                     {% if errors.cost %}
                         <p class="text-danger">{{ errors.cost }}</p>
                     {% endif %}
