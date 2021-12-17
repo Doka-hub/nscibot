@@ -79,7 +79,7 @@ class TGUser(BaseModel):
         return amount
     
     def __str__(self):
-        return self.username or self.id
+        return self.username or str(self.id)
     
 
 class ReferralCabinet(BaseModel):
@@ -93,7 +93,7 @@ referral_cabinet_tgusers_through = TGUser.referrals.get_through_model()
 
 
 class Order(BaseModel):
-    tguser = peewee.ForeignKeyField(TGUser, backref='orders', verbose_name='Заказы')
+    tguser = peewee.ForeignKeyField(TGUser, on_delete='CASCADE',  backref='orders', verbose_name='Заказы')
 
     amount = peewee.DecimalField(verbose_name='Сумма')
     paid = peewee.BooleanField(default=False, verbose_name='Оплачено')
