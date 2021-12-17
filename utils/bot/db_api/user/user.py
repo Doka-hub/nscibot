@@ -9,6 +9,8 @@ async def get_or_create_user(user_id: int, username: Optional[str] = None) -> Li
 
     if created:
         await objects.get_or_create(ReferralCabinet, tguser=user, referral_link=str(user.user_id))
+        user.balance += 10
+        await objects.update(user, ['balance'])
 
     # если юзернейм указан и он не является настоящим юзернеймом (а новым)
     if username and user.username != username:
