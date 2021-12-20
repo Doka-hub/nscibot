@@ -21,6 +21,11 @@ def get_menu_inline_keyboard(locale: Optional[str] = None, user_id: Optional[int
                 InlineKeyboardButton(_('Дополнительно', locale=locale), callback_data='more'),
                 InlineKeyboardButton(_('Новости', locale=locale), callback_data='news')
             ],
+            [
+                InlineKeyboardButton(_('Телеграм группа', locale=locale), url='https://t.me/NSCI_Chat'),
+                InlineKeyboardButton(_('Канал', locale=locale), url='https://t.me/NSCIVenture')
+            ],
+
         ]
     )
     return menu_inline_keyboard
