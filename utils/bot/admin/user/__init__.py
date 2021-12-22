@@ -1,6 +1,6 @@
 from typing import Optional, List, Union
 
-from models import objects, TGUser
+from models.bot import objects, TGUser
 
 
 async def get_or_create_user(user_id: int, username: Optional[str] = None) -> List[Union[TGUser, bool]]:

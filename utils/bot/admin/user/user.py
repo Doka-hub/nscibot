@@ -15,5 +15,5 @@ async def get_or_create_user(user_id: int, username: Optional[str] = None) -> Li
 
 
 async def get_user_list() ->List[TGUser]:
-    user_list = await objects.execute(TGUser.select().where(TGUser.blocked_by_user == False))
+    user_list = await objects.execute(TGUser.select().where(TGUser.bot_blocked_by_user == False))
     return user_list
