@@ -1,1 +1,1 @@
-from . import bot, subscriber_bot
+from . import bot
