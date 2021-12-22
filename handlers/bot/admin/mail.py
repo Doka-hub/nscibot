@@ -22,7 +22,7 @@ from utils.bot.db_api.admin.mail import (
     get_message_template, save_message_template, delete_message_template
 )
 
-from tasks.bot.tasks import task_mail, task_notify
+from tasks.bot.tasks import task_mail
 from tasks.bot.mail import mail
 
 from loader import bot_dp, bot_i18n_gettext as _
