@@ -13,7 +13,7 @@ from utils.bot.db_api.user import get_or_create_user
 
 from models.bot import objects
 
-from loader import provider_bot
+from loader import bot
 
 
 def make_text(title: str, text: str) -> str:
@@ -56,29 +56,29 @@ async def send_message(to: Union[str, int], title: Optional[str] = None,
         if not message:
             message = make_text(title, text)
         if image_id:
-            await provider_bot.send_photo(
+            await bot.send_photo(
                 to, image_id, message, parse_mode=parse_mode,
                 reply_markup=reply_markup,
                 disable_notification=disable_notification)
         elif video_id:
-            await provider_bot.send_video(
+            await bot.send_video(
                 to, video_id, caption=message, parse_mode=parse_mode,
                 reply_markup=reply_markup,
                 disable_notification=disable_notification)
         elif document:
-            await provider_bot.send_document(
+            await bot.send_document(
                 to, document, reply_markup=reply_markup,
                 disable_notification=disable_notification)
         else:
-            await provider_bot.send_message(
+            await bot.send_message(
                 to, message, parse_mode=parse_mode, reply_markup=reply_markup,
                 disable_notification=disable_notification)
         return True
     except RetryAfter as e:
-        error = f'{e}'
-        time = error[error.find('Retry in ') + len('Retry in '):error.find(
-            ' seconds')]  # сколько нужно ждать
-        await sleep(float(time))
+        # error = f'{e}'
+        # time = error[error.find('Retry in ') + len('Retry in '):error.find(
+        #     ' seconds')]  # сколько нужно ждать
+        await sleep(float(e.timeout) + 2)
         return await send_message(to, title, text, message, image_id, video_id,
                                   document, parse_mode, reply_markup,
                                   disable_notification, tries + 1, max_tries)
