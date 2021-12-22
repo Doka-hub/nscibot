@@ -30,12 +30,12 @@ async def on_startup(app: web.Application):
     logger.info('Configure BOT Webhook URL to: {url}', url=config.WEBHOOK_URL)
     
 #    await bot_dp.start_polling()
-    await bot_dp.bot.set_webhook(config.WEBHOOK_URL)
+#     await bot_dp.bot.set_webhook(config.WEBHOOK_URL)
     # await sleep(2)
 
 
 async def on_shutdown(app: web.Application):
-    await bot_dp.bot.close()
+    # await bot_dp.bot.close()
     return
     # await subscriber_dp.bot.delete_webhook()
     # await subscriber_dp.bot.close()
