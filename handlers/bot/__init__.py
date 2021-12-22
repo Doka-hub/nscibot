@@ -1,10 +1,10 @@
 from aiogram import Dispatcher
 
 # local imports
-from . import admin, errors, user
+from . import errors, admin, user
 
 
 def setup(dp: Dispatcher):
-    admin.setup(dp)
     errors.setup(dp)
+    admin.setup(dp)
     user.setup(dp)
