@@ -5,7 +5,7 @@ from typing import Dict, Union, List, Optional
 # local imports
 from keyboards.bot.inline.admin.mail import get_mail_create_inline_keyboard, get_mail_create_message
 
-from loader import provider_bot
+from loader import bot
 
 
 async def mail_create_send_message_detail(*, callback: Optional[types.CallbackQuery] = None,
@@ -20,7 +20,7 @@ async def mail_create_send_message_detail(*, callback: Optional[types.CallbackQu
     if callback:
         user_id = callback.from_user.id
 
-        mail_data = await provider_bot.storage.get_data(user=user_id)
+        mail_data = await bot.storage.get_data(user=user_id)
         image_id = mail_data.get('image_id')
         video_id = mail_data.get('video_id')
 
@@ -43,7 +43,7 @@ async def mail_create_send_message_detail(*, callback: Optional[types.CallbackQu
     elif message:
         user_id = message.from_user.id
 
-        mail_data = await provider_bot.storage.get_data(user=user_id)
+        mail_data = await bot.storage.get_data(user=user_id)
         image_id = mail_data.get('image_id')
         video_id = mail_data.get('video_id')
 

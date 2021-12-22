@@ -1,7 +1,7 @@
 from aiogram import types
 
 # local imports
-from keyboards.bot.inline.user import get_menu_inline_keyboard
+from keyboards.bot.inline.admin.menu import get_menu_inline_keyboard
 
 from loader import bot_i18n_gettext as _
 
