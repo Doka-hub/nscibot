@@ -16,6 +16,10 @@ BOT_TOKEN = config('BOT_TOKEN')
 BASE_URL = config('BASE_URL')  # webhook domain
 ADMINS = [
     539655707,  # Дока
+    287478166,
+    1590525561,
+    863053395,
+    300061390
 ]
 MODERATOR_USERNAME = 'NSCI_support'
 HELPER_USERNAME = 'NSCI_support'
