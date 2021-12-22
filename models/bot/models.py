@@ -8,7 +8,8 @@ from playhouse.migrate import MySQLMigrator, PostgresqlMigrator, migrate
 
 # local imports
 from data import config
-from keyboards.bot import default
+
+from .fields import JSONField
 
 
 if config.DATABASE == 'mysql':
@@ -112,3 +113,12 @@ class ExchangeRate(BaseModel):
         if not cls.table_exists():
             cls.create_table()
             cls.create(cost=100)
+
+
+class MessageTemplate(BaseModel):
+    user = peewee.ForeignKeyField(TGUser, on_delete='CASCADE',
+                                  related_name='message_templates')
+
+    name = peewee.CharField(max_length=255, unique=True)
+    data = JSONField()
+
