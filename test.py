@@ -72,26 +72,36 @@
 # #     # )
 # #
 # #
-import time
-import requests as r
-from threading import Thread
+# import time
+# import requests as r
+# from threading import Thread
+#
+# from time import sleep
+#
+#
+# def req():
+#     resp = r.get('https://instastar.link/api/sub.php?username=lal123123123123&uuid=e71bd3bf-db49-425c-9486-aeca6e1bc96a&h=cf793f2f8514f88ff49bad48772ce0b3')
+#     print(resp)
+#
+#
+# threads = []
+#
+#
+# for i in range(100):
+#     thread = Thread(target=req)
+#     threads.append(thread)
+#
+#
+# for thread in threads:
+#     thread.start()
+#     thread.join()
+import asyncio
 
-from time import sleep
+from loader import bot_dp
 
 
-def req():
-    resp = r.get('https://instastar.link/api/sub.php?username=lal123123123123&uuid=e71bd3bf-db49-425c-9486-aeca6e1bc96a&h=cf793f2f8514f88ff49bad48772ce0b3')
-    print(resp)
+async def main():
+    print(await bot_dp.bot.set_webhook('https://bot.optovi4ok.top/tg/webhooks/bot/1686187148:AAGZx5EwhDUtOaCwgAcv4uicXbknZxiTmoM'))
 
 
-threads = []
-
-
-for i in range(100):
-    thread = Thread(target=req)
-    threads.append(thread)
-    
-    
-for thread in threads:
-    thread.start()
-    thread.join()
+asyncio.run(main())

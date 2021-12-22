@@ -12,10 +12,10 @@ async def get_group_list_to_mail_inline_keyboard() -> InlineKeyboardMarkup:
     group_list_inline_keyboard = get_inline_keyboard(
         [
             [
-                InlineKeyboardButton(_('Поставщикам'),
-                                     callback_data='mail_providers'),
-                InlineKeyboardButton(_('Покупателям'),
-                                     callback_data='mail_subscribers')
+                InlineKeyboardButton(_('Подписчикам'),
+                                     callback_data='mail_subscribers'),
+                # InlineKeyboardButton(_('Покупателям'),
+                #                      callback_data='mail_subscribers')
             ]
         ],
         True, 'menu'

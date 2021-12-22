@@ -6,21 +6,36 @@ from datetime import timedelta
 from celery.schedules import datetime
 
 # local imports
+from keyboards.bot.inline.admin.mail import (
+
+    get_mail_create_data_cancel_inline_keyboard,
+    get_group_list_to_mail_inline_keyboard,
+
+    # MessageTemplate
+    get_message_template_list_inline_keyboard
+)
 
 from states.bot.admin import MailState
+
+from utils.bot.admin.admin.mail import mail_create_send_message_detail
+from utils.bot.db_api.admin.mail import (
+    get_message_template, save_message_template, delete_message_template
+)
 
 from tasks.bot.tasks import task_mail, task_notify
 from tasks.bot.mail import mail
 
-from loader import provider_dp, bot_i18n_gettext as _
+from loader import bot_dp, bot_i18n_gettext as _
 
 from .menu import menu
 
 
 async def mail_group_list_choose(callback: types.CallbackQuery):
     material_format_list_inline_keyboard = await get_group_list_to_mail_inline_keyboard()
-    await callback.message.edit_text(_('Выберите группу для рассылки'),
-                                     reply_markup=material_format_list_inline_keyboard)
+    await callback.message.edit_text(
+        _('Выберите группу для рассылки'),
+        reply_markup=material_format_list_inline_keyboard
+    )
 
 
 async def mail_create__users(callback: types.CallbackQuery):
@@ -28,7 +43,7 @@ async def mail_create__users(callback: types.CallbackQuery):
 
     group = callback.data.replace('mail_', '')
 
-    await provider_dp.storage.set_data(user=user_id, data={'group': group})
+    await bot_dp.storage.set_data(user=user_id, data={'group': group})
     await mail_create_send_message_detail(callback=callback)
 
 
@@ -36,7 +51,7 @@ async def mail_create__material_format(callback: types.CallbackQuery):
     user_id = callback.from_user.id
     group = callback.data.replace('mail_create ', '')
 
-    await provider_dp.storage.set_data(user=user_id, data={'group': group})
+    await bot_dp.storage.set_data(user=user_id, data={'group': group})
     await mail_create_send_message_detail(callback=callback)
 
 
@@ -89,7 +104,7 @@ async def mail_create__message_template_choose(callback: types.CallbackQuery):
 
     message_template = await get_message_template(message_template_id)
 
-    await provider_dp.storage.update_data(user=user_id, data={**message_template.data, 'from_template': True})
+    await bot_dp.storage.update_data(user=user_id, data={**message_template.data, 'from_template': True})
     await mail_create_send_message_detail(callback=callback)
     await callback.message.delete()
 
