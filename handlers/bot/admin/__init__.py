@@ -42,7 +42,7 @@ from .mail import (
 
 def setup(dp: Dispatcher):
     # Старт
-    # dp.register_message_handler(bot_start, CommandStart(), is_admin=True)
+    dp.register_message_handler(bot_start, CommandStart(), is_admin=True)
 
     # Меню
     dp.register_callback_query_handler(menu, callback_data='menu', is_admin=True)
