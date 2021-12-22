@@ -14,7 +14,7 @@ from .language import choose_language, change_language
 
 def setup(dp: Dispatcher):
     # Старт
-    dp.register_message_handler(bot_start, bot_start)
+    dp.register_message_handler(bot_start, CommandStart())
 
     # # Обработка контакта
     # dp.register_message_handler(contact__handler, content_types=types.ContentType.CONTACT)
