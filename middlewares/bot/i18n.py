@@ -20,6 +20,9 @@ class LanguageMiddleware(I18nMiddleware):
             return lang
 
     def gettext(self, singular, plural=None, n=1, locale=None):
+        if locale is None:
+            locale = self.ctx_locale.get()
+        print('gettext: ', locale)
         return super().gettext(singular, plural, n, locale)
 
 
