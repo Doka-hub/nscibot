@@ -6,7 +6,6 @@ from .user import get_or_create_user
 
 async def get_language(user_id: int) -> TGUser.language:
     user, user_created = await get_or_create_user(user_id)
-    print(user, user.language)
     return user.language
 
 

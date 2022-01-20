@@ -22,8 +22,21 @@ class LanguageMiddleware(I18nMiddleware):
     def gettext(self, singular, plural=None, n=1, locale=None):
         if locale is None:
             locale = self.ctx_locale.get()
-        print('gettext: ', locale)
-        return super().gettext(singular, plural, n, locale)
+
+        if locale not in self.locales:
+            if n == 1:
+                return singular
+            return plural
+
+        translator = self.locales[locale]
+        print('locales: ', self.locales, dir(self.locales))
+        print('translator: ', translator)
+
+        if plural is None:
+            text = translator.gettext(singular)
+        text = translator.ngettext(singular, plural, n)
+        print('text: ', text)
+        return text
 
 
 i18n = LanguageMiddleware(I18N_DOMAIN, LOCALES_DIR)
