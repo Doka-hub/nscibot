@@ -1,0 +1,329 @@
+# English translations for PROJECT.
+# Copyright (C) 2021 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2021-12-23 15:41+0600\n"
+"PO-Revision-Date: 2021-12-23 15:44+0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: env/lib/python3.8/site-packages/kombu/transport/qpid.py:1301
+#, python-format
+msgid "Attempting to connect to qpid with SASL mechanism %s"
+msgstr ""
+
+#: env/lib/python3.8/site-packages/kombu/transport/qpid.py:1306
+#, python-format
+msgid "Connected to qpid with SASL mechanism %s"
+msgstr ""
+
+#: env/lib/python3.8/site-packages/kombu/transport/qpid.py:1324
+#, python-format
+msgid "Unable to connect to qpid with SASL mechanism %s"
+msgstr ""
+
+#: handlers/bot/admin/mail.py:36
+msgid "Выберите группу для рассылки"
+msgstr ""
+
+#: handlers/bot/admin/mail.py:61 handlers/bot/admin/mail.py:64
+msgid "Введите название шаблона"
+msgstr ""
+
+#: handlers/bot/admin/mail.py:75
+msgid "Шаблон с таким названием уже существует"
+msgstr ""
+
+#: handlers/bot/admin/mail.py:77
+msgid "Шаблон сохранён"
+msgstr ""
+
+#: handlers/bot/admin/mail.py:87 handlers/bot/admin/mail.py:89
+msgid "Выберите шаблон"
+msgstr ""
+
+#: handlers/bot/admin/mail.py:96
+msgid "Шаблон удалён"
+msgstr ""
+
+#: handlers/bot/admin/mail.py:126
+msgid "Страница {}"
+msgstr ""
+
+#: handlers/bot/admin/mail.py:147
+msgid "Отправьте изображение или видео"
+msgstr ""
+
+#: handlers/bot/admin/mail.py:174 handlers/bot/admin/mail.py:177
+msgid "Отправьте заголовок"
+msgstr ""
+
+#: handlers/bot/admin/mail.py:192 handlers/bot/admin/mail.py:194
+msgid "Отправьте текст"
+msgstr ""
+
+#: handlers/bot/admin/mail.py:210 handlers/bot/admin/mail.py:214
+msgid ""
+"Отправьте кнопку в следующем формате:\n"
+"`Text - URL`"
+msgstr ""
+
+#: handlers/bot/admin/mail.py:225 handlers/bot/admin/mail.py:230
+msgid ""
+"Неверный формат. Отправьте кнопку в следующем формате:\n"
+"`Text - URL`"
+msgstr ""
+
+#: handlers/bot/admin/mail.py:244 handlers/bot/admin/mail.py:247
+msgid "Отправьте время в формате: число;часы;минуты"
+msgstr ""
+
+#: handlers/bot/admin/mail.py:281
+msgid "Рассылка запланирована"
+msgstr ""
+
+#: handlers/bot/admin/mail.py:287
+msgid "Рассылка запущена"
+msgstr ""
+
+#: handlers/bot/admin/mail.py:293
+msgid "Заказы отправляются"
+msgstr ""
+
+#: handlers/bot/admin/menu.py:14 handlers/bot/admin/start.py:16
+#: handlers/bot/user/language.py:27 handlers/bot/user/menu.py:34
+#: handlers/bot/user/start.py:28
+msgid "Меню"
+msgstr ""
+
+#: handlers/bot/admin/whitelist.py:14
+msgid "{} добавлен в whitelist"
+msgstr ""
+
+#: handlers/bot/admin/whitelist.py:16 handlers/bot/admin/whitelist.py:25
+msgid "Неверный id"
+msgstr ""
+
+#: handlers/bot/admin/whitelist.py:23
+msgid "{} удалён из whitelist"
+msgstr ""
+
+#: handlers/bot/user/menu.py:56
+msgid ""
+"Баланс: {0} NSCI\n"
+"Примерно: {1} USD\n"
+"🤝 Приглашено: {2} пользователей\n"
+"💰 Заработано: {3} NSCI\n"
+"        "
+msgstr ""
+
+#: handlers/bot/user/menu.py:66
+msgid "Временно не доступно"
+msgstr ""
+
+#: handlers/bot/user/menu.py:91
+msgid ""
+"💵 Партнерская программа 🤝\n"
+"Реферальная программа 2 уровней\n"
+"1)\t2% - получайте 2% от покупок ваших друзей\n"
+"2)\t8% - По достижению 10 друзей, которые приобрели NSCI для себя, вы "
+"будете получать 8% от их покупок\n"
+"Приглашайте новых пользователей и получайте пассивный доход от комиссий "
+"бота! 💵 \n"
+"Реферальная программа бессрочна, не имеет лимита приглашений и начинает "
+"действовать моментально.\n"
+"Для достижения высоких результатов, внимательно подходите к поиску "
+"целевой аудитории: привлекайте только тех, кто будет покупать или "
+"продавать криптовалюту.\n"
+"Используйте уникальную реферальную ссылку для приглашения пользователей. "
+"Чеки и ссылки на ваши объявления также являются реферальными.\n"
+"t.me/NSCI_Venture_Bot?start={0}\n"
+"        "
+msgstr ""
+
+#: handlers/bot/user/menu.py:110
+msgid ""
+"Ваши рефераллы: \n"
+"{0}"
+msgstr ""
+
+#: handlers/bot/user/menu.py:124 keyboards/bot/inline/user/menu.py:21
+msgid "Дополнительно"
+msgstr ""
+
+#: handlers/bot/user/menu.py:137 keyboards/bot/inline/user/menu.py:22
+msgid "Новости"
+msgstr ""
+
+#: keyboards/bot/default/user/start.py:10
+msgid "Подписаться"
+msgstr ""
+
+#: keyboards/bot/inline/admin/mail.py:15
+msgid "Подписчикам"
+msgstr ""
+
+#: keyboards/bot/inline/admin/mail.py:34
+msgid "Создание рассылки:\n"
+msgstr ""
+
+#: keyboards/bot/inline/admin/mail.py:87
+msgid "Добавить изображение или видео"
+msgstr ""
+
+#: keyboards/bot/inline/admin/mail.py:88
+msgid "Изменить изображение или видео"
+msgstr ""
+
+#: keyboards/bot/inline/admin/mail.py:94
+msgid "Добавить заголовок"
+msgstr ""
+
+#: keyboards/bot/inline/admin/mail.py:94
+msgid "Изменить заголовок"
+msgstr ""
+
+#: keyboards/bot/inline/admin/mail.py:98
+msgid "Добавить текст"
+msgstr ""
+
+#: keyboards/bot/inline/admin/mail.py:98
+msgid "Изменить текст"
+msgstr ""
+
+#: keyboards/bot/inline/admin/mail.py:104
+msgid "Добавить кнопку 1"
+msgstr ""
+
+#: keyboards/bot/inline/admin/mail.py:104
+msgid "Изменить кнопку 1"
+msgstr ""
+
+#: keyboards/bot/inline/admin/mail.py:110
+msgid "Добавить кнопку 2"
+msgstr ""
+
+#: keyboards/bot/inline/admin/mail.py:110
+msgid "Изменить кнопку 2"
+msgstr ""
+
+#: keyboards/bot/inline/admin/mail.py:116
+msgid "Добавить кнопку 3"
+msgstr ""
+
+#: keyboards/bot/inline/admin/mail.py:116
+msgid "Изменить кнопку 3"
+msgstr ""
+
+#: keyboards/bot/inline/admin/mail.py:122
+msgid "Добавить кнопку 4"
+msgstr ""
+
+#: keyboards/bot/inline/admin/mail.py:122
+msgid "Изменить кнопку 4"
+msgstr ""
+
+#: keyboards/bot/inline/admin/mail.py:128
+msgid "Выбрать время для рассылки"
+msgstr ""
+
+#: keyboards/bot/inline/admin/mail.py:129
+msgid "Изменить время для рассылки"
+msgstr ""
+
+#: keyboards/bot/inline/admin/mail.py:133
+msgid "Разослать"
+msgstr ""
+
+#: keyboards/bot/inline/admin/mail.py:139
+msgid "Сохранить шаблон"
+msgstr ""
+
+#: keyboards/bot/inline/admin/mail.py:143
+msgid "Выбрать шаблон"
+msgstr ""
+
+#: keyboards/bot/inline/admin/mail.py:149
+#: keyboards/bot/inline/admin/mail.py:165
+msgid "Отмена"
+msgstr ""
+
+#: keyboards/bot/inline/admin/mail.py:181
+msgid "Шаблон {}"
+msgstr ""
+
+#: keyboards/bot/inline/admin/mail.py:183
+msgid "Удалить"
+msgstr ""
+
+#: keyboards/bot/inline/admin/menu.py:16
+msgid "Написать подписчикам"
+msgstr ""
+
+#: keyboards/bot/inline/user/menu.py:17
+msgid "Баланс"
+msgstr ""
+
+#: keyboards/bot/inline/user/menu.py:18
+msgid "Реферальная программа"
+msgstr ""
+
+#: keyboards/bot/inline/user/menu.py:25
+msgid "Телеграм группа"
+msgstr ""
+
+#: keyboards/bot/inline/user/menu.py:26
+msgid "Канал"
+msgstr ""
+
+#: keyboards/bot/inline/user/menu.py:38
+msgid "Купить"
+msgstr ""
+
+#: keyboards/bot/inline/user/menu.py:39
+msgid "Продать"
+msgstr ""
+
+#: keyboards/bot/inline/user/menu.py:41
+msgid "Вывести на кошелек"
+msgstr ""
+
+#: keyboards/bot/inline/user/menu.py:50
+msgid "Мои рефералы"
+msgstr ""
+
+#: keyboards/bot/inline/user/menu.py:60
+msgid "Поддержка"
+msgstr ""
+
+#: keyboards/bot/inline/user/menu.py:61
+msgid "Сайт"
+msgstr ""
+
+#: keyboards/bot/inline/user/menu.py:63
+msgid "Курс"
+msgstr ""
+
+#: keyboards/bot/inline/user/menu.py:75
+msgid "Телеграм"
+msgstr ""
+
+#: keyboards/bot/inline/user/menu.py:76
+msgid "Твиттер"
+msgstr ""
+
+#: keyboards/bot/utils/get_inline_keyboard.py:18
+msgid "Назад"
+msgstr ""
+

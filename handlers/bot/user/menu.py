@@ -45,12 +45,17 @@ async def balance(callback: types.CallbackQuery):
     user, user_created = await get_or_create_user(user_id, username)
 
     balance_inline_keyboard = get_balance_inline_keyboard(user_id=user_id)
+    exchange_rate = await get_exchange_rate_()
     await callback.message.answer(_(
-        f'''Баланс: {user.balance} NSCI
-Примерно: {float(user.balance * await get_exchange_rate_())} USD
-🤝 Приглашено: {user.referral_cabinet.get().referrals.count()} пользователей
-💰 Заработано: {user.earned} NSCI
-        '''
+        '''Баланс: {0} NSCI
+Примерно: {1} USD
+🤝 Приглашено: {2} пользователей
+💰 Заработано: {3} NSCI
+        '''.format(
+            user.balance, float(user.balance * exchange_rate),
+            user.referral_cabinet.get().referrals.count(),
+            user.earned
+        ),
     ), reply_markup=balance_inline_keyboard)
 
 
@@ -73,7 +78,7 @@ async def referral(callback: types.CallbackQuery):
 
     referral_inline_keyboard = get_referral_inline_keyboard()
     await callback.message.answer(_(
-        f'''💵 Партнерская программа 🤝
+        '''💵 Партнерская программа 🤝
 Реферальная программа 2 уровней
 1)	2% - получайте 2% от покупок ваших друзей
 2)	8% - По достижению 10 друзей, которые приобрели NSCI для себя, вы будете получать 8% от их покупок
@@ -81,9 +86,13 @@ async def referral(callback: types.CallbackQuery):
 Реферальная программа бессрочна, не имеет лимита приглашений и начинает действовать моментально.
 Для достижения высоких результатов, внимательно подходите к поиску целевой аудитории: привлекайте только тех, кто будет покупать или продавать криптовалюту.
 Используйте уникальную реферальную ссылку для приглашения пользователей. Чеки и ссылки на ваши объявления также являются реферальными.
-t.me/NSCI_Venture_Bot?start={user.referral_cabinet.get().referral_link}
-        '''), reply_markup=referral_inline_keyboard
+t.me/NSCI_Venture_Bot?start={0}
+        '''.format(
+            user.referral_cabinet.get().referral_link
+        )
+    ), reply_markup=referral_inline_keyboard
     )
+
 
 async def referral_list(callback: types.CallbackQuery):
     try:
@@ -98,7 +107,8 @@ async def referral_list(callback: types.CallbackQuery):
     user_referral_list = await get_user_referral_list(user)
     text = await format_referral_list(user_referral_list)
     back_to_menu_inline_keyboard = get_back_to_menu_inline_keyboard()
-    await callback.message.answer(_(f'Ваши рефераллы: \n{text}'), reply_markup=back_to_menu_inline_keyboard)
+    await callback.message.answer(_('Ваши рефераллы: \n{0}'.format(text)),
+                                  reply_markup=back_to_menu_inline_keyboard)
 
 
 async def more(callback: types.CallbackQuery):
