@@ -4,11 +4,12 @@ from typing import Optional, List, Union
 from models.bot import objects, TGUser, ReferralCabinet, ExchangeRate, DoesNotExist
 
 
-async def get_or_create_user(user_id: int, username: Optional[str] = None) -> List[Union[TGUser, bool]]:
-    user, created = await objects.get_or_create(TGUser, user_id=int(user_id))
+async def get_or_create_user(user_id: str, username: Optional[str] = None) -> List[Union[TGUser, bool]]:
+    user, created = await objects.get_or_create(TGUser, user_id=str(user_id))
 
     if created:
-        await objects.get_or_create(ReferralCabinet, tguser=user, referral_link=str(user.user_id))
+        await objects.get_or_create(ReferralCabinet, tguser=user,
+                                    referral_link=str(user.user_id))
         user.balance += 10
         await objects.update(user, ['balance'])
 
@@ -19,8 +20,9 @@ async def get_or_create_user(user_id: int, username: Optional[str] = None) -> Li
     return [user, created]
 
 
-async def set_referral(referral: TGUser, referrer_id: int) -> bool:
-    referrer, referrer_created = await objects.get_or_create(TGUser, user_id=referrer_id)
+async def set_referral(referral: TGUser, referrer_id: int):
+    referrer, referrer_created = await objects.get_or_create(TGUser,
+                                                             user_id=str(referrer_id))
     referrer_cabinet = referrer.referral_cabinet.get()
     if referral not in referrer_cabinet.referrals:
         referrer_cabinet.referrals.add([referral])

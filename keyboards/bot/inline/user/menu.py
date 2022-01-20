@@ -69,7 +69,6 @@ def get_more_inline_keyboard(locale: Optional[str] = None, user_id: Optional[int
     return more_inline_keyboard
 
 
-
 def get_news_inline_keyboard(locale: Optional[str] = None, user_id: Optional[int] = None) -> InlineKeyboardMarkup:
     news_inline_keyboard = get_inline_keyboard(
         [
