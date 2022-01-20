@@ -10,7 +10,7 @@ if __name__ == '__main__':
         #     IntegerField(null=True, verbose_name='ID пригласителя в БД')
         # ),
         # bot.migrator.drop_column('tguser', 'referral_user_id')
-        bot.migrator.alter_add_column(
+        bot.migrator.alter_column_type(
             'tguser', 'user_id',
             CharField(max_length=255, verbose_name='ID')
         )
