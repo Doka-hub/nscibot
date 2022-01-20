@@ -11,8 +11,8 @@ if __name__ == '__main__':
         # ),
         # bot.migrator.drop_column('tguser', 'referral_user_id')
         bot.migrator.alter_add_column(
-            'referralcabinet', 'tguser',
-            ForeignKeyField(bot.TGUser, on_delete='CASCADE', unique=True, backref='referral_cabinet', verbose_name='Реферальный кабинет')
+            'tguser', 'user_id',
+            CharField(max_length=255, verbose_name='ID')
         )
     )
     # referral_user_id = IntegerField(null=True, verbose_name='ID пригласителя в БД')

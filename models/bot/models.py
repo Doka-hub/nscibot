@@ -43,7 +43,7 @@ class TGUser(BaseModel):
         ('en', 'en'),
     )
 
-    user_id = peewee.IntegerField(verbose_name='ID')
+    user_id = peewee.CharField(max_length=255, verbose_name='ID')
     username = peewee.CharField(max_length=255, null=True, verbose_name='Логин')
     full_name = peewee.CharField(max_length=255, null=True, verbose_name='Имя')
     phone_number = peewee.CharField(max_length=255, null=True, verbose_name='Номер телефона')
