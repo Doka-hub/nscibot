@@ -3,7 +3,9 @@ from aiogram import types
 # local imports
 from utils.bot.db_api.user import set_language
 
+from keyboards.bot.inline.user import get_menu_inline_keyboard
 from keyboards.bot.inline.user.language import get_language_inline_keyboard
+
 
 from loader import bot_i18n_gettext as _
 
@@ -24,4 +26,5 @@ async def choose_language(callback: types.CallbackQuery) -> None:
 
     await callback.message.delete()
 
-    await callback.message.answer(_('Меню', locale=user_language))
+    menu_inline_keyboard = get_menu_inline_keyboard(user_id=user_id)
+    await callback.message.answer(_('Меню', locale=user_language), reply_markup=menu_inline_keyboard)
