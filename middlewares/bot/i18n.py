@@ -11,14 +11,15 @@ from data.config import I18N_DOMAIN, LOCALES_DIR
 
 class LanguageMiddleware(I18nMiddleware):
     async def get_user_locale(self, action: str, args: Tuple[Any]) -> Optional[str]:
+        print('get_user_locale activated')
         chat = types.Chat.get_current()
         if chat.type != 'channel':
             user = types.User.get_current()
             lang = await get_language(user_id=user.id) or user.locale
+            print(user, lang)
             return lang
 
     def gettext(self, singular, plural=None, n=1, locale=None):
-        print('gettext: ', singular, locale)
         return super().gettext(singular, plural, n, locale)
 
 
