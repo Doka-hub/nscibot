@@ -5,6 +5,7 @@ from data import config
 from handlers.bot.user.menu import referral
 
 from keyboards.bot.default.user import get_request_contact_default_keyboard
+from keyboards.bot.inline.user.language import get_language_inline_keyboard
 from keyboards.bot.inline.user import get_menu_inline_keyboard
 
 from utils.bot.db_api.user import get_or_create_user, set_referral
@@ -21,11 +22,15 @@ async def bot_start(message: types.Message):
     
     referrer_id = message.get_args()
     if referrer_id and int(referrer_id) != int(user_id):
-        print(referrer_id)
         await set_referral(user, referrer_id)
 
-    menu_inline_keyboard = get_menu_inline_keyboard(user_id=user_id)
-    await message.answer(_('Меню'), reply_markup=menu_inline_keyboard)
+    if not user.language:
+        language_inline_keyboard = get_language_inline_keyboard()
+        await message.answer('Выберите язык / Choose language',
+                                      reply_markup=language_inline_keyboard)
+    else:
+        menu_inline_keyboard = get_menu_inline_keyboard(user_id=user_id)
+        await message.answer(_('Меню'), reply_markup=menu_inline_keyboard)
 
 
 # # Обработка контакта
