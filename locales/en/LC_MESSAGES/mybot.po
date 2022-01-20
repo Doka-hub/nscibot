@@ -21,103 +21,107 @@ msgstr ""
 #: env/lib/python3.8/site-packages/kombu/transport/qpid.py:1301
 #, python-format
 msgid "Attempting to connect to qpid with SASL mechanism %s"
-msgstr ""
+msgstr "Attempting to connect to qpid with SASL mechanism %s"
 
 #: env/lib/python3.8/site-packages/kombu/transport/qpid.py:1306
 #, python-format
 msgid "Connected to qpid with SASL mechanism %s"
-msgstr ""
+msgstr "Connected to qpid with SASL mechanism %s"
 
 #: env/lib/python3.8/site-packages/kombu/transport/qpid.py:1324
 #, python-format
 msgid "Unable to connect to qpid with SASL mechanism %s"
-msgstr ""
+msgstr "Unable to connect to qpid with SASL mechanism %s"
 
 #: handlers/bot/admin/mail.py:36
 msgid "Выберите группу для рассылки"
-msgstr ""
+msgstr "Choose group to send"
 
 #: handlers/bot/admin/mail.py:61 handlers/bot/admin/mail.py:64
 msgid "Введите название шаблона"
-msgstr ""
+msgstr "Type name template"
 
 #: handlers/bot/admin/mail.py:75
 msgid "Шаблон с таким названием уже существует"
-msgstr ""
+msgstr "A template with this name already exists"
 
 #: handlers/bot/admin/mail.py:77
 msgid "Шаблон сохранён"
-msgstr ""
+msgstr "Template saved"
 
 #: handlers/bot/admin/mail.py:87 handlers/bot/admin/mail.py:89
 msgid "Выберите шаблон"
-msgstr ""
+msgstr "Choose template"
 
 #: handlers/bot/admin/mail.py:96
 msgid "Шаблон удалён"
-msgstr ""
+msgstr "Template deleted"
 
 #: handlers/bot/admin/mail.py:126
 msgid "Страница {}"
-msgstr ""
+msgstr "Page {}"
 
 #: handlers/bot/admin/mail.py:147
 msgid "Отправьте изображение или видео"
-msgstr ""
+msgstr "Send img or video"
 
 #: handlers/bot/admin/mail.py:174 handlers/bot/admin/mail.py:177
 msgid "Отправьте заголовок"
-msgstr ""
+msgstr "Send title"
 
 #: handlers/bot/admin/mail.py:192 handlers/bot/admin/mail.py:194
 msgid "Отправьте текст"
-msgstr ""
+msgstr "Send text"
 
 #: handlers/bot/admin/mail.py:210 handlers/bot/admin/mail.py:214
 msgid ""
 "Отправьте кнопку в следующем формате:\n"
 "`Text - URL`"
 msgstr ""
+"Send a button in the following format:\n"
+"`Text - URL`"
 
 #: handlers/bot/admin/mail.py:225 handlers/bot/admin/mail.py:230
 msgid ""
 "Неверный формат. Отправьте кнопку в следующем формате:\n"
 "`Text - URL`"
 msgstr ""
+"Wrong format. Send a button in the following format:\n"
+"`Text - URL`"
 
 #: handlers/bot/admin/mail.py:244 handlers/bot/admin/mail.py:247
 msgid "Отправьте время в формате: число;часы;минуты"
-msgstr ""
+msgstr "Send time in the format: day; hours; minutes"
 
 #: handlers/bot/admin/mail.py:281
 msgid "Рассылка запланирована"
-msgstr ""
+msgstr "Newsletter scheduled"
 
 #: handlers/bot/admin/mail.py:287
 msgid "Рассылка запущена"
-msgstr ""
+msgstr "Newsletter started"
 
 #: handlers/bot/admin/mail.py:293
 msgid "Заказы отправляются"
-msgstr ""
+msgstr "Orders are sent"
 
 #: handlers/bot/admin/menu.py:14 handlers/bot/admin/start.py:16
 #: handlers/bot/user/language.py:27 handlers/bot/user/menu.py:34
 #: handlers/bot/user/start.py:28
 msgid "Меню"
-msgstr ""
+msgstr "Menu"
 
 #: handlers/bot/admin/whitelist.py:14
 msgid "{} добавлен в whitelist"
-msgstr ""
+msgstr "{} added to whitelist"
 
 #: handlers/bot/admin/whitelist.py:16 handlers/bot/admin/whitelist.py:25
 msgid "Неверный id"
-msgstr ""
+msgstr "incorrect id"
 
 #: handlers/bot/admin/whitelist.py:23
 msgid "{} удалён из whitelist"
-msgstr ""
+msgstr "{} deleted from whitelist"
 
 #: handlers/bot/user/menu.py:56
 msgid ""
@@ -127,10 +131,15 @@ msgid ""
 "💰 Заработано: {3} NSCI\n"
 "        "
 msgstr ""
+"Balance: {0} NSCI\n"
+"Approximately: {1} USD\n"
+"🤝 Invited: {2} пользователей\n"
+"💰 Earned: {3} NSCI\n"
+"        "
 
 #: handlers/bot/user/menu.py:66
 msgid "Временно не доступно"
-msgstr ""
+msgstr "Temporarily unavailable"
 
 #: handlers/bot/user/menu.py:91
 msgid ""
@@ -151,179 +160,190 @@ msgid ""
 "t.me/NSCI_Venture_Bot?start={0}\n"
 "        "
 msgstr ""
+"Affiliate Program 🤝\n"
+"Referral program in 2 levels :\n"
+"1) 2% - get 2% from your friends' purchases\n"
+"2) 8% - Upon reaching 10 friends who have purchased NSCI for themselves, you will receive 8% of their purchases\n"
+"Invite new users and earn passive income from bot commissions! 💵\n"
+"The referral program is unlimited, has no limit of invitations and starts working instantly.\n"
+"To achieve high results, carefully approach the search for the target audience: attract only those who will buy or sell cryptocurrency.\n"
+"Use a unique referral link to invite users. Checks and links to your ads are also referral.\n"
+"        "
 
 #: handlers/bot/user/menu.py:110
 msgid ""
 "Ваши рефераллы: \n"
 "{0}"
 msgstr ""
+"Your referrals: \n"
+"{0}"
 
 #: handlers/bot/user/menu.py:124 keyboards/bot/inline/user/menu.py:21
 msgid "Дополнительно"
-msgstr ""
+msgstr "Adds"
 
 #: handlers/bot/user/menu.py:137 keyboards/bot/inline/user/menu.py:22
 msgid "Новости"
-msgstr ""
+msgstr "News"
 
 #: keyboards/bot/default/user/start.py:10
 msgid "Подписаться"
-msgstr ""
+msgstr "Follow"
 
 #: keyboards/bot/inline/admin/mail.py:15
 msgid "Подписчикам"
-msgstr ""
+msgstr "Subscribers"
 
 #: keyboards/bot/inline/admin/mail.py:34
 msgid "Создание рассылки:\n"
-msgstr ""
+msgstr "Create mailing list:\n"
 
 #: keyboards/bot/inline/admin/mail.py:87
 msgid "Добавить изображение или видео"
-msgstr ""
+msgstr "Add an image or video"
 
 #: keyboards/bot/inline/admin/mail.py:88
 msgid "Изменить изображение или видео"
-msgstr ""
+msgstr "Change image or video"
 
 #: keyboards/bot/inline/admin/mail.py:94
 msgid "Добавить заголовок"
-msgstr ""
+msgstr "Add title"
 
 #: keyboards/bot/inline/admin/mail.py:94
 msgid "Изменить заголовок"
-msgstr ""
+msgstr "Change title"
 
 #: keyboards/bot/inline/admin/mail.py:98
 msgid "Добавить текст"
-msgstr ""
+msgstr "Add text"
 
 #: keyboards/bot/inline/admin/mail.py:98
 msgid "Изменить текст"
-msgstr ""
+msgstr "Change text"
 
 #: keyboards/bot/inline/admin/mail.py:104
 msgid "Добавить кнопку 1"
-msgstr ""
+msgstr "Add button 1"
 
 #: keyboards/bot/inline/admin/mail.py:104
 msgid "Изменить кнопку 1"
-msgstr ""
+msgstr "Change button 1"
 
 #: keyboards/bot/inline/admin/mail.py:110
 msgid "Добавить кнопку 2"
-msgstr ""
+msgstr "Add button 2"
 
 #: keyboards/bot/inline/admin/mail.py:110
 msgid "Изменить кнопку 2"
-msgstr ""
+msgstr "Change button 2"
 
 #: keyboards/bot/inline/admin/mail.py:116
 msgid "Добавить кнопку 3"
-msgstr ""
+msgstr "Add button 3"
 
 #: keyboards/bot/inline/admin/mail.py:116
 msgid "Изменить кнопку 3"
-msgstr ""
+msgstr "Change button 3"
 
 #: keyboards/bot/inline/admin/mail.py:122
 msgid "Добавить кнопку 4"
-msgstr ""
+msgstr "Add button 4"
 
 #: keyboards/bot/inline/admin/mail.py:122
 msgid "Изменить кнопку 4"
-msgstr ""
+msgstr "Change button 4"
 
 #: keyboards/bot/inline/admin/mail.py:128
 msgid "Выбрать время для рассылки"
-msgstr ""
+msgstr "Choose a time to send"
 
 #: keyboards/bot/inline/admin/mail.py:129
 msgid "Изменить время для рассылки"
-msgstr ""
+msgstr "Change mailing time"
 
 #: keyboards/bot/inline/admin/mail.py:133
 msgid "Разослать"
-msgstr ""
+msgstr "Send out"
 
 #: keyboards/bot/inline/admin/mail.py:139
 msgid "Сохранить шаблон"
-msgstr ""
+msgstr "Save Template"
 
 #: keyboards/bot/inline/admin/mail.py:143
 msgid "Выбрать шаблон"
-msgstr ""
+msgstr "Choose Template"
 
 #: keyboards/bot/inline/admin/mail.py:149
 #: keyboards/bot/inline/admin/mail.py:165
 msgid "Отмена"
-msgstr ""
+msgstr "Cancel"
 
 #: keyboards/bot/inline/admin/mail.py:181
 msgid "Шаблон {}"
-msgstr ""
+msgstr "Template {}"
 
 #: keyboards/bot/inline/admin/mail.py:183
 msgid "Удалить"
-msgstr ""
+msgstr "Delete"
 
 #: keyboards/bot/inline/admin/menu.py:16
 msgid "Написать подписчикам"
-msgstr ""
+msgstr "Write to subscribers"
 
 #: keyboards/bot/inline/user/menu.py:17
 msgid "Баланс"
-msgstr ""
+msgstr "Balance"
 
 #: keyboards/bot/inline/user/menu.py:18
 msgid "Реферальная программа"
-msgstr ""
+msgstr "Referral program"
 
 #: keyboards/bot/inline/user/menu.py:25
 msgid "Телеграм группа"
-msgstr ""
+msgstr "Telegram group"
 
 #: keyboards/bot/inline/user/menu.py:26
 msgid "Канал"
-msgstr ""
+msgstr "Channel"
 
 #: keyboards/bot/inline/user/menu.py:38
 msgid "Купить"
-msgstr ""
+msgstr "Buy"
 
 #: keyboards/bot/inline/user/menu.py:39
 msgid "Продать"
-msgstr ""
+msgstr "Sell"
 
 #: keyboards/bot/inline/user/menu.py:41
 msgid "Вывести на кошелек"
-msgstr ""
+msgstr "Withdraw to wallet"
 
 #: keyboards/bot/inline/user/menu.py:50
 msgid "Мои рефералы"
-msgstr ""
+msgstr "My referrals"
 
 #: keyboards/bot/inline/user/menu.py:60
 msgid "Поддержка"
-msgstr ""
+msgstr "Support"
 
 #: keyboards/bot/inline/user/menu.py:61
 msgid "Сайт"
-msgstr ""
+msgstr "Site"
 
 #: keyboards/bot/inline/user/menu.py:63
 msgid "Курс"
-msgstr ""
+msgstr "Rate"
 
 #: keyboards/bot/inline/user/menu.py:75
 msgid "Телеграм"
-msgstr ""
+msgstr "Telegram"
 
 #: keyboards/bot/inline/user/menu.py:76
 msgid "Твиттер"
-msgstr ""
+msgstr "Twitter"
 
 #: keyboards/bot/utils/get_inline_keyboard.py:18
 msgid "Назад"
-msgstr ""
+msgstr "Back"
 
