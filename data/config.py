@@ -29,7 +29,7 @@ WEBHOOK_PATH = f'/tg/webhooks/bot/'
 WEBHOOK_URL = f'{BASE_URL}{WEBHOOK_PATH}{BOT_TOKEN}'
 
 # I18N settings
-I18N_DOMAIN = 'bot'
+I18N_DOMAIN = 'mybot'
 LOCALES_DIR = BASE_DIR / 'locales'
 
 # TIMEZONE
