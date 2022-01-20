@@ -17,5 +17,9 @@ class LanguageMiddleware(I18nMiddleware):
             lang = await get_language(user_id=user.id) or user.locale
             return lang
 
+    def gettext(self, singular, plural=None, n=1, locale=None):
+        print('gettext: ', singular, locale)
+        return super().gettext(singular, plural, n, locale)
+
 
 i18n = LanguageMiddleware(I18N_DOMAIN, LOCALES_DIR)
