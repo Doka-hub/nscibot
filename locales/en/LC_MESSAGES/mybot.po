@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-12-23 15:41+0600\n"
+"POT-Creation-Date: 2022-01-21 05:22+0600\n"
 "PO-Revision-Date: 2021-12-23 15:44+0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -106,8 +106,8 @@ msgid "Заказы отправляются"
 msgstr "Orders are sent"
 
 #: handlers/bot/admin/menu.py:14 handlers/bot/admin/start.py:16
-#: handlers/bot/user/language.py:27 handlers/bot/user/menu.py:34
-#: handlers/bot/user/start.py:28
+#: handlers/bot/user/language.py:30 handlers/bot/user/menu.py:34
+#: handlers/bot/user/start.py:33
 msgid "Меню"
 msgstr "Menu"
 
@@ -163,11 +163,15 @@ msgstr ""
 "Affiliate Program 🤝\n"
 "Referral program in 2 levels :\n"
 "1) 2% - get 2% from your friends' purchases\n"
-"2) 8% - Upon reaching 10 friends who have purchased NSCI for themselves, you will receive 8% of their purchases\n"
+"2) 8% - Upon reaching 10 friends who have purchased NSCI for themselves, "
+"you will receive 8% of their purchases\n"
 "Invite new users and earn passive income from bot commissions! 💵\n"
-"The referral program is unlimited, has no limit of invitations and starts working instantly.\n"
-"To achieve high results, carefully approach the search for the target audience: attract only those who will buy or sell cryptocurrency.\n"
-"Use a unique referral link to invite users. Checks and links to your ads are also referral.\n"
+"The referral program is unlimited, has no limit of invitations and starts"
+" working instantly.\n"
+"To achieve high results, carefully approach the search for the target "
+"audience: attract only those who will buy or sell cryptocurrency.\n"
+"Use a unique referral link to invite users. Checks and links to your ads "
+"are also referral.\n"
 "        "
 
 #: handlers/bot/user/menu.py:110
@@ -307,39 +311,43 @@ msgstr "Telegram group"
 msgid "Канал"
 msgstr "Channel"
 
-#: keyboards/bot/inline/user/menu.py:38
+#: keyboards/bot/inline/user/menu.py:29
+msgid "Сменить язык"
+msgstr "Change language"
+
+#: keyboards/bot/inline/user/menu.py:40
 msgid "Купить"
 msgstr "Buy"
 
-#: keyboards/bot/inline/user/menu.py:39
+#: keyboards/bot/inline/user/menu.py:41
 msgid "Продать"
 msgstr "Sell"
 
-#: keyboards/bot/inline/user/menu.py:41
+#: keyboards/bot/inline/user/menu.py:43
 msgid "Вывести на кошелек"
 msgstr "Withdraw to wallet"
 
-#: keyboards/bot/inline/user/menu.py:50
+#: keyboards/bot/inline/user/menu.py:52
 msgid "Мои рефералы"
 msgstr "My referrals"
 
-#: keyboards/bot/inline/user/menu.py:60
+#: keyboards/bot/inline/user/menu.py:62
 msgid "Поддержка"
 msgstr "Support"
 
-#: keyboards/bot/inline/user/menu.py:61
+#: keyboards/bot/inline/user/menu.py:63
 msgid "Сайт"
 msgstr "Site"
 
-#: keyboards/bot/inline/user/menu.py:63
+#: keyboards/bot/inline/user/menu.py:65
 msgid "Курс"
 msgstr "Rate"
 
-#: keyboards/bot/inline/user/menu.py:75
+#: keyboards/bot/inline/user/menu.py:76
 msgid "Телеграм"
 msgstr "Telegram"
 
-#: keyboards/bot/inline/user/menu.py:76
+#: keyboards/bot/inline/user/menu.py:77
 msgid "Твиттер"
 msgstr "Twitter"
 
