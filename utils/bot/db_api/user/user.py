@@ -30,7 +30,6 @@ async def set_referral(referral: TGUser, referrer_id: int) -> bool:
         await objects.update(referral, ['is_referral', 'referrer_user_id'])
 
 
-
 async def get_or_none_by_phone_number(phone_number: str) -> Optional[TGUser]:
     try:
         user = await objects.get(TGUser, phone_number=phone_number)

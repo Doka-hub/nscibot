@@ -14,7 +14,8 @@ class LanguageMiddleware(I18nMiddleware):
         chat = types.Chat.get_current()
         if chat.type != 'channel':
             user = types.User.get_current()
-            return await get_language(user_id=user.id) or user.locale
+            lang = await get_language(user_id=user.id) or user.locale
+            return lang
 
 
 i18n = LanguageMiddleware(I18N_DOMAIN, LOCALES_DIR)
