@@ -17,22 +17,5 @@ class LanguageMiddleware(I18nMiddleware):
             lang = await get_language(user_id=user.id) or user.locale
             return lang
 
-    def gettext(self, singular, plural=None, n=1, locale=None):
-        if locale is None:
-            locale = self.ctx_locale.get()
-
-        if locale not in self.locales:
-            if n == 1:
-                return singular
-            return plural
-
-        translator = self.locales[locale]
-        if plural is None:
-            text = translator.gettext(singular)
-        else:
-            text = translator.ngettext(singular, plural, n)
-        print('text: ', text)
-        return text
-
 
 i18n = LanguageMiddleware(I18N_DOMAIN, LOCALES_DIR)

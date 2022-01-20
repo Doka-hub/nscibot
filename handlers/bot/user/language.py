@@ -26,5 +26,5 @@ async def choose_language(callback: types.CallbackQuery) -> None:
 
     await callback.message.delete()
 
-    menu_inline_keyboard = get_menu_inline_keyboard(user_id=user_id)
+    menu_inline_keyboard = get_menu_inline_keyboard(user_language, user_id=user_id)
     await callback.message.answer(_('Меню', locale=user_language), reply_markup=menu_inline_keyboard)
