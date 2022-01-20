@@ -23,13 +23,13 @@ class LanguageMiddleware(I18nMiddleware):
         if locale is None:
             locale = self.ctx_locale.get()
 
+        print('locales: ', self.locales, dir(self.locales))
         if locale not in self.locales:
             if n == 1:
                 return singular
             return plural
 
         translator = self.locales[locale]
-        print('locales: ', self.locales, dir(self.locales))
         print('translator: ', translator)
 
         if plural is None:
