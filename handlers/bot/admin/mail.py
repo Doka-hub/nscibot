@@ -287,10 +287,3 @@ async def mail_send(callback: types.CallbackQuery, state: FSMContext):
         await callback.answer(_('Рассылка запущена'))
 
         task_mail.delay(mail_data)
-
-
-async def order_send(callback: types.CallbackQuery):
-    await callback.answer(_('Заказы отправляются'))
-
-    await menu(callback)
-    task_notify.delay()

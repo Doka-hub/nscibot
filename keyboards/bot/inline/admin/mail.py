@@ -5,6 +5,8 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 # local imports
 from keyboards.bot.utils import get_inline_keyboard
 
+from utils.bot.db_api.admin.mail import get_message_template_list
+
 from loader import bot_i18n_gettext as _
 
 

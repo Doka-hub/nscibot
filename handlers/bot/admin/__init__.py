@@ -54,10 +54,6 @@ def setup(dp: Dispatcher):
     dp.register_callback_query_handler(mail_group_list_choose,
                                        callback_data='mail')
 
-    # Рассылка
-    dp.register_callback_query_handler(order_send,
-                                       callback_data='admin_send_orders')
-
     # Рассылка - создание
     dp.register_callback_query_handler(
         mail_create__users, callback_data__startswith='mail_subscribers')
