@@ -34,9 +34,6 @@ from .mail import (
 
     # Отправка сообщения
     mail_send,
-
-    # Отправка заказов
-    order_send
 )
 
 
