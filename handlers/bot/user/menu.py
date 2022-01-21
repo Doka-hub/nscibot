@@ -46,17 +46,19 @@ async def balance(callback: types.CallbackQuery):
 
     balance_inline_keyboard = get_balance_inline_keyboard(user_id=user_id)
     exchange_rate = await get_exchange_rate_()
-    await callback.message.answer(_(
-        '''Баланс: {0} NSCI
+    await callback.message.answer(
+        _(
+            '''Баланс: {0} NSCI
 Примерно: {1} USD
 🤝 Приглашено: {2} пользователей
 💰 Заработано: {3} NSCI
         '''.format(
-            user.balance, float(user.balance * exchange_rate),
-            user.referral_cabinet.get().referrals.count(),
-            user.earned
-        ),
-    ), reply_markup=balance_inline_keyboard)
+                user.balance, float(user.balance * exchange_rate),
+                user.referral_cabinet.get().referrals.count(),
+                user.earned
+            ),
+        ), reply_markup=balance_inline_keyboard
+    )
 
 
 async def withdraw(callback: types.CallbackQuery):
@@ -77,8 +79,9 @@ async def referral(callback: types.CallbackQuery):
     user, user_created = await get_or_create_user(user_id, username)
 
     referral_inline_keyboard = get_referral_inline_keyboard()
-    await callback.message.answer(_(
-        '''💵 Партнерская программа 🤝
+    await callback.message.answer(
+        _(
+            '''💵 Партнерская программа 🤝
 Реферальная программа 2 уровней
 1)	2% - получайте 2% от покупок ваших друзей
 2)	8% - По достижению 10 друзей, которые приобрели NSCI для себя, вы будете получать 8% от их покупок
@@ -88,9 +91,9 @@ async def referral(callback: types.CallbackQuery):
 Используйте уникальную реферальную ссылку для приглашения пользователей. Чеки и ссылки на ваши объявления также являются реферальными.
 t.me/NSCI_Venture_Bot?start={0}
         '''.format(
-            user.referral_cabinet.get().referral_link
-        )
-    ), reply_markup=referral_inline_keyboard
+                user.referral_cabinet.get().referral_link
+            )
+        ), reply_markup=referral_inline_keyboard
     )
 
 

@@ -172,6 +172,7 @@ msgstr ""
 "audience: attract only those who will buy or sell cryptocurrency.\n"
 "Use a unique referral link to invite users. Checks and links to your ads "
 "are also referral.\n"
+"t.me/NSCI_Venture_Bot?start={0}\n"
 "        "
 
 #: handlers/bot/user/menu.py:110
