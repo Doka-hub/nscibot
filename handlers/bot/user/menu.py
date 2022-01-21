@@ -52,11 +52,10 @@ async def balance(callback: types.CallbackQuery):
 Примерно: {1} USD
 🤝 Приглашено: {2} пользователей
 💰 Заработано: {3} NSCI
-        '''.format(
-                user.balance, float(user.balance * exchange_rate),
-                user.referral_cabinet.get().referrals.count(),
-                user.earned
-            ),
+        ''').format(
+            user.balance, float(user.balance * exchange_rate),
+            user.referral_cabinet.get().referrals.count(),
+            user.earned
         ), reply_markup=balance_inline_keyboard
     )
 
@@ -90,9 +89,8 @@ async def referral(callback: types.CallbackQuery):
 Для достижения высоких результатов, внимательно подходите к поиску целевой аудитории: привлекайте только тех, кто будет покупать или продавать криптовалюту.
 Используйте уникальную реферальную ссылку для приглашения пользователей. Чеки и ссылки на ваши объявления также являются реферальными.
 t.me/NSCI_Venture_Bot?start={0}
-        '''.format(
-                user.referral_cabinet.get().referral_link
-            )
+        ''').format(
+            user.referral_cabinet.get().referral_link
         ), reply_markup=referral_inline_keyboard
     )
 
